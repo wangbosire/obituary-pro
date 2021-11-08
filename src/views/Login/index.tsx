@@ -13,7 +13,7 @@ const LoginPage: React.FC = () => {
 
   return (
     <LoginForm
-      title="生死簿管理系统"
+      title="000"
       subTitle="。。。。。"
       onFinish={handleSubmit}
     >

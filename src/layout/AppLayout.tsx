@@ -12,89 +12,7 @@ const AppLayout: React.FC = () => {
 
   const appRoutes: Route = {
     path: '/',
-    routes: [
-      {
-        path: '/home',
-        name: '首页',
-        icon: <MenuUnfoldOutlined/>
-      },
-      {
-        path: '/obituaryBook',
-        name: '生死簿',
-        icon: <MenuUnfoldOutlined/>,
-        children: [
-          {
-            path: '/user',
-            name: '用户管理',
-            icon: <MenuUnfoldOutlined/>
-          },
-          {
-            path: '/data-sync',
-            name: '数据同步',
-            icon: <MenuUnfoldOutlined/>
-          }
-        ]
-      },
-      {
-        path: '/gou-hun',
-        name: '勾魂管理',
-        icon: <MenuUnfoldOutlined/>
-      },
-      {
-        path: '/shen-pan-history',
-        name: '阎王殿审判记录',
-        icon: <MenuUnfoldOutlined/>
-      },
-      {
-        path: '/di-yu-18-tier',
-        name: '十八层地狱',
-        icon: <MenuUnfoldOutlined/>,
-        children: [
-          {
-            path: '/equipment',
-            name: '设备管理',
-            icon: <MenuUnfoldOutlined/>,
-          },
-          {
-            path: '/workflow',
-            name: '作业流程',
-            icon: <MenuUnfoldOutlined/>,
-          }
-        ]
-      },
-      {
-        path: '/6-dao-again',
-        name: '六道轮回',
-        icon: <MenuUnfoldOutlined/>
-      },
-      {
-        path: '/ming-bi',
-        name: '冥币管理',
-        icon: <MenuUnfoldOutlined/>
-      },
-      {
-        path: '/logger',
-        name: '日志管理',
-        icon: <MenuUnfoldOutlined/>
-      },
-      {
-        path: '/system',
-        name: '系统管理',
-        icon: <MenuUnfoldOutlined/>,
-        children: [
-          {
-            path: '/administrator',
-            name: '管理员',
-            icon: <MenuUnfoldOutlined/>
-          },
-          {
-            path: '/role-permission',
-            name: '角色权限',
-            icon: <MenuUnfoldOutlined/>
-          }
-        ]
-      }
-    ]
+    routes: []
   }
 
   const headerContentRender = () => {
@@ -131,7 +49,7 @@ const AppLayout: React.FC = () => {
       headerContentRender={headerContentRender}
       route={appRoutes}
       menuItemRender={menuItemRender}
-      title={'地府管理系统'}
+      title={''}
       logo={
         <img src={appConfig.logo} alt=""/>
       }

@@ -13,7 +13,7 @@ const routes: Array<RouteObject> = [
     children: [
       {
         path: '',
-        element: <HomePage/>
+        element: <LoginPage/>
       }
     ]
   },
