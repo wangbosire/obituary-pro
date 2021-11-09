@@ -5,6 +5,7 @@ import ProLayout, { PageContainer, MenuDataItem } from '@ant-design/pro-layout'
 import { Route } from '@ant-design/pro-layout/lib/typings'
 import { Outlet, Link, useLocation } from 'react-router-dom'
 import appConfig from '../config/app.config'
+import '../assets/style/layout/app-layout.less'
 
 const AppLayout: React.FC = () => {
   const location = useLocation()
@@ -12,12 +13,27 @@ const AppLayout: React.FC = () => {
 
   const appRoutes: Route = {
     path: '/',
-    routes: []
+    routes: [
+      {
+        path: '/',
+        name: '首页'
+      },
+      {
+        path: '/login',
+        name: '菜单',
+        children: [
+          {
+            path: '/',
+            name: '菜单一'
+          }
+        ]
+      }
+    ]
   }
 
   const headerContentRender = () => {
     return (
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+      <div className="app-layout-header">
         <div
           onClick={() => toggleCollapsed()}
           style={{ cursor: 'pointer', fontSize: '16px' }}
@@ -49,7 +65,7 @@ const AppLayout: React.FC = () => {
       headerContentRender={headerContentRender}
       route={appRoutes}
       menuItemRender={menuItemRender}
-      title={''}
+      title={'管理系统'}
       logo={
         <img src={appConfig.logo} alt=""/>
       }

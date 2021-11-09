@@ -4,6 +4,36 @@ html, body {
   height: 100%;
 }
 
+.card-border-angle {
+  position: relative;
+  border: 2px solid @default-background-color;
+  box-sizing: border-box;
+
+  &::before {
+    content: "";
+    top: 0;
+    left: 0;
+    position: absolute;
+    background: url("../images/row-line.png") no-repeat;
+    max-width: 170px;
+    width: 40%;
+    max-height: 45px;
+    height: 20%;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: url("../images/column-line.png") no-repeat bottom right;
+    max-height: 170px;
+    height: 40%;
+    max-width: 45px;
+    width: 20%;
+  }
+}
+
 #root {
   height: 100%;
   width: 100%;
@@ -11,4 +41,49 @@ html, body {
   background-size: cover;
   overflow: auto;
   position: relative;
+
+  * {
+    background-color: transparent;
+    color: #ffffff;
+  }
+
+
+  .ant-pro-global-header {
+    background-color: transparent;
+  }
+
+  .ant-layout-sider {
+    box-sizing: border-box;
+    background-color: @default-background-color;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      background: url("../images/column-line.png") no-repeat bottom;
+      background-size: 100%;
+      width: 45px;
+      height: 100%;
+      z-index: -1;
+    }
+  }
+
+  .ant-pro-sider-logo h1 {
+    color: #20dbfd !important;
+    text-shadow: 0 0 25px #00d8ff;
+  }
+
+  .ant-pro-table {
+    .card-border-angle();
+  }
+
+  .ant-card {
+    .card-border-angle();
+  }
+
+  .ant-pro-card {
+    .card-border-angle();
+  }
+
 }

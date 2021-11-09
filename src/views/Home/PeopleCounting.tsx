@@ -46,7 +46,7 @@ const PeopleCounting: React.FC = () => {
 
   return (
     <StatisticCard
-      title="地府出入境人数"
+      title="111"
       chart={ChartView}
     />
   )

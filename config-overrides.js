@@ -13,9 +13,6 @@ module.exports = override(
     lessOptions: {
       javascriptEnabled: true,
       modifyVars: AntdThemeJson,
-      cssModules: {
-        localIdentName: "[local]--[hash:base64:5]"
-      },
       sourceMap: true
     }
   })

@@ -60,7 +60,7 @@ const PeopleCountingClassify: React.FC = () => {
 
   return (
     <StatisticCard
-      title="各层地狱人数"
+      title="111"
       chart={ChartView}
     />
   )

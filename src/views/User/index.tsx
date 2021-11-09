@@ -8,15 +8,7 @@ type TableItem = {
   id: number;
   number: number;
   title: string;
-  labels: {
-    name: string;
-    color: string;
-  }[];
   state: string;
-  comments: number;
-  created_at: string;
-  updated_at: string;
-  closed_at?: string;
 }
 
 const columns: ProColumns<TableItem>[] = [
@@ -33,21 +25,21 @@ const columns: ProColumns<TableItem>[] = [
     align: 'center',
     dataIndex: 'state'
   },
-  {
-    title: '寿命',
-    dataIndex: 'labels',
-    align: 'center'
-  },
-  {
-    title: '类别',
-    dataIndex: 'labels',
-    align: 'center'
-  },
-  {
-    title: '死亡方式',
-    dataIndex: 'labels',
-    align: 'center'
-  },
+  // {
+  //   title: '寿命',
+  //   dataIndex: 'labels',
+  //   align: 'center'
+  // },
+  // {
+  //   title: '类别',
+  //   dataIndex: 'labels',
+  //   align: 'center'
+  // },
+  // {
+  //   title: '死亡方式',
+  //   dataIndex: 'labels',
+  //   align: 'center'
+  // },
   {
     title: '创建时间',
     key: 'showTime',
@@ -56,10 +48,20 @@ const columns: ProColumns<TableItem>[] = [
 ]
 
 const UserPage: React.FC = () => {
+
+  const dataSource: TableItem[] = [{
+    url: 'string',
+    id: 111,
+    number: 111,
+    title: '1111',
+    state: '1'
+  }]
+
   return (
     <ProTable<TableItem>
       columns={columns}
       rowKey="id"
+      bordered
       search={{
         labelWidth: 120
       }}
@@ -72,6 +74,7 @@ const UserPage: React.FC = () => {
       }}
       headerTitle={false}
       toolBarRender={false}
+      dataSource={dataSource}
     />
   )
 }
