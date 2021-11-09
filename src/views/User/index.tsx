@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import type { ProColumns } from '@ant-design/pro-table'
 import ProTable, {} from '@ant-design/pro-table'
 import { Button, Space, Tag } from 'antd'
+import { LoadingComponent } from '../../components'
 
 type TableItem = {
   url: string;
@@ -57,25 +58,34 @@ const UserPage: React.FC = () => {
     state: '1'
   }]
 
+
+  const [loading, setLoading] = useState(true)
+
+  setTimeout(() => {
+    setLoading(false)
+  }, 2000)
+
   return (
-    <ProTable<TableItem>
-      columns={columns}
-      rowKey="id"
-      bordered
-      search={{
-        labelWidth: 120
-      }}
-      form={{
-        ignoreRules: false,
-      }}
-      pagination={{
-        pageSize: 5,
-        showQuickJumper: true
-      }}
-      headerTitle={false}
-      toolBarRender={false}
-      dataSource={dataSource}
-    />
+    <LoadingComponent loading={loading}>
+      <ProTable<TableItem>
+        columns={columns}
+        rowKey="id"
+        bordered
+        search={{
+          labelWidth: 120
+        }}
+        form={{
+          ignoreRules: false,
+        }}
+        pagination={{
+          pageSize: 5,
+          showQuickJumper: true
+        }}
+        headerTitle={false}
+        toolBarRender={false}
+        dataSource={dataSource}
+      />
+    </LoadingComponent>
   )
 }
 
