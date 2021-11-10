@@ -12,7 +12,7 @@ const LoadingComponent: React.FC<LoadingComponentProps> = (
 ) => {
   const renderView = (
     loading ? (
-      <div id="app-loading">
+      <div className="app-loading">
         <div className="loading-image">
           <img className="loading-image-1" src={LoadingImage1} alt=""/>
           <img className="loading-image-2" src={LoadingImage2} alt=""/>
