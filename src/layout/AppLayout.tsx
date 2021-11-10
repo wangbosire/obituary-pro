@@ -5,7 +5,9 @@ import ProLayout, { PageContainer, MenuDataItem } from '@ant-design/pro-layout'
 import { Route } from '@ant-design/pro-layout/lib/typings'
 import { Outlet, Link, useLocation } from 'react-router-dom'
 import appConfig from '../config/app.config'
+import AppLayoutHeader from "./AppLayoutHeader";
 import '../assets/style/layout/app-layout.less'
+import { FolderFilled, FileFilled } from "@ant-design/icons";
 
 const AppLayout: React.FC = () => {
   const location = useLocation()
@@ -15,12 +17,9 @@ const AppLayout: React.FC = () => {
     path: '/',
     routes: [
       {
-        path: '/',
-        name: '首页'
-      },
-      {
         path: '/login',
         name: '菜单',
+        icon: <FolderFilled/>,
         children: [
           {
             path: '/',
@@ -41,7 +40,7 @@ const AppLayout: React.FC = () => {
           {collapsed ? <MenuUnfoldOutlined/> : <MenuFoldOutlined/>}
         </div>
 
-        <div>2222</div>
+        <AppLayoutHeader/>
       </div>
     )
   }
@@ -65,7 +64,7 @@ const AppLayout: React.FC = () => {
       headerContentRender={headerContentRender}
       route={appRoutes}
       menuItemRender={menuItemRender}
-      title={'管理系统'}
+      title={appConfig.title}
       logo={
         <img src={appConfig.logo} alt=""/>
       }
